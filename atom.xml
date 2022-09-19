@@ -14,7 +14,7 @@
         <id>http://example.com/2022/09/18/life-of-love/test/</id>
         <title>9-18-she</title>
         <link rel="alternate" href="http://example.com/2022/09/18/life-of-love/test/"/>
-        <content type="html">&lt;p&gt;&lt;img data-src=&#34;../../image/9yue18.jpg&#34; alt=&#34;she&#34;&gt;&lt;/p&gt;
+        <content type="html">&lt;p&gt;&lt;img data-src=&#34;test/9yue18.jpg&#34; alt=&#34;she&#34;&gt;&lt;/p&gt;
 </content>
         <category term="life-of-love" scheme="http://example.com/categories/life-of-love/" />
         <updated>2022-09-18T14:48:30.485Z</updated>

@@ -11,7 +11,7 @@
             "url": "http://example.com/2022/09/18/life-of-love/test/",
             "title": "9-18-she",
             "date_published": "2022-09-18T14:48:30.485Z",
-            "content_html": "<p><img data-src=\"../../image/9yue18.jpg\" alt=\"she\"></p>\n",
+            "content_html": "<p><img data-src=\"test/9yue18.jpg\" alt=\"she\"></p>\n",
             "tags": [
                 "life-of-love"
             ]
