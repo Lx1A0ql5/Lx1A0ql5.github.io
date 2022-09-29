@@ -7,6 +7,56 @@
     "home_page_url": "http://example.com",
     "items": [
         {
+            "id": "http://example.com/2022/09/29/html-css-js/js.xss%E6%B8%B2%E6%9F%93%E7%9B%B8%E5%86%8C/",
+            "url": "http://example.com/2022/09/29/html-css-js/js.xss%E6%B8%B2%E6%9F%93%E7%9B%B8%E5%86%8C/",
+            "title": "js,xss渲染相册",
+            "date_published": "2022-09-29T09:46:55.542Z",
+            "content_html": "<h3 id=\"先欠着\"><a class=\"anchor\" href=\"#先欠着\">#</a> 先欠着</h3>\n",
+            "tags": [
+                "html-css-js"
+            ]
+        },
+        {
+            "id": "http://example.com/2022/09/29/Penetration-test/fileupload/",
+            "url": "http://example.com/2022/09/29/Penetration-test/fileupload/",
+            "title": "fileupload",
+            "date_published": "2022-09-29T09:38:03.682Z",
+            "content_html": "<h3 id=\"先欠着\"><a class=\"anchor\" href=\"#先欠着\">#</a> 先欠着</h3>\n",
+            "tags": [
+                "Penetration-test"
+            ]
+        },
+        {
+            "id": "http://example.com/2022/09/29/Penetration-test/csrf/",
+            "url": "http://example.com/2022/09/29/Penetration-test/csrf/",
+            "title": "csrf",
+            "date_published": "2022-09-29T09:36:48.031Z",
+            "content_html": "<h3 id=\"先欠着\"><a class=\"anchor\" href=\"#先欠着\">#</a> 先欠着</h3>\n",
+            "tags": [
+                "Penetration-test"
+            ]
+        },
+        {
+            "id": "http://example.com/2022/09/29/Penetration-test/injection/",
+            "url": "http://example.com/2022/09/29/Penetration-test/injection/",
+            "title": "injection",
+            "date_published": "2022-09-29T09:36:06.067Z",
+            "content_html": "<h3 id=\"先欠着\"><a class=\"anchor\" href=\"#先欠着\">#</a> 先欠着</h3>\n",
+            "tags": [
+                "Penetration-test"
+            ]
+        },
+        {
+            "id": "http://example.com/2022/09/29/Security/NTFS%E5%AE%89%E5%85%A8/",
+            "url": "http://example.com/2022/09/29/Security/NTFS%E5%AE%89%E5%85%A8/",
+            "title": "NTFS安全",
+            "date_published": "2022-09-29T01:49:31.131Z",
+            "content_html": "<h3 id=\"ntfs权限概述\"><a class=\"anchor\" href=\"#ntfs权限概述\">#</a> NTFS 权限概述</h3>\n<p>通过设置 NTFS 权限，实现不同的用户访问不同对象的权限</p>\n<p>分配正确的访问权限，用户才能访问其资源</p>\n<p>设置权限防止资源被篡改</p>\n<p>(磁盘格式化方式)</p>\n<h3 id=\"文件系统概述\"><a class=\"anchor\" href=\"#文件系统概述\">#</a> 文件系统概述</h3>\n<p>文件系统即在外部存储设备上组织文件的方法</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>FAT //windows</pre></td></tr><tr><td data-num=\"2\"></td><td><pre>NTFS  //windows</pre></td></tr><tr><td data-num=\"3\"></td><td><pre>EXT //linux</pre></td></tr></table></figure><h3 id=\"ntfs权限设置\"><a class=\"anchor\" href=\"#ntfs权限设置\">#</a> NTFS 权限设置</h3>\n<p>文件夹权限设置，在高级选项里取消父类继承，即可更改用户继承下来的权限。</p>\n<p>用户在不同的组，权限累加</p>\n<p>文件夹右键属性，安全，第二个替代子对象权限打勾。</p>\n<h3 id=\"文件共享服务器\"><a class=\"anchor\" href=\"#文件共享服务器\">#</a> 文件共享服务器</h3>\n<p>l 两个 ip 可通信，共享的文件夹打开共享并赋予相应用户的 NTFS 权限</p>\n<p>在远程共享的电脑 cmd</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token punctuation\">\\</span><span class=\"token punctuation\">\\</span>x.x.x.x  //ip为文件共享服务器的ip</pre></td></tr></table></figure><p>查询当前用户的账户名和 SID</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token function\">whoami</span> /user</pre></td></tr></table></figure><figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>net share //查看当前共享的文件</pre></td></tr></table></figure><figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>net share xx /del //xx为文件共享名</pre></td></tr></table></figure><figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>net share <span class=\"token assign-left variable\">xx</span><span class=\"token operator\">=</span>xx1 //xx为共享名，xx1为共享资源</pre></td></tr></table></figure><h3 id=\"445端口\"><a class=\"anchor\" href=\"#445端口\">#</a> 445 端口</h3>\n<p>打开 cmd 输入</p>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>services.msc</pre></td></tr></table></figure><p>找到 Server 服务，关闭该服务后，所有的共享全部失效，445 端口关闭，可以屏蔽病毒传入</p>\n",
+            "tags": [
+                "Security"
+            ]
+        },
+        {
             "id": "http://example.com/2022/09/26/Security/%E6%89%B9%E5%A4%84%E7%90%86/",
             "url": "http://example.com/2022/09/26/Security/%E6%89%B9%E5%A4%84%E7%90%86/",
             "title": "批处理",

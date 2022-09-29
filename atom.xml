@@ -8,8 +8,70 @@
     <author>
       <name>Lx1A0ql5</name>
     </author>
-    <updated>2022-09-26T11:55:04.669Z</updated>
+    <updated>2022-09-29T09:46:55.542Z</updated>
     <category term="网络空间安全，WEB渗透测试，前端网页设计，She" />
+    <entry>
+        <id>http://example.com/2022/09/29/html-css-js/js.xss%E6%B8%B2%E6%9F%93%E7%9B%B8%E5%86%8C/</id>
+        <title>js,xss渲染相册</title>
+        <link rel="alternate" href="http://example.com/2022/09/29/html-css-js/js.xss%E6%B8%B2%E6%9F%93%E7%9B%B8%E5%86%8C/"/>
+        <content type="html">&lt;h3 id=&#34;先欠着&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先欠着&#34;&gt;#&lt;/a&gt; 先欠着&lt;/h3&gt;
+</content>
+        <category term="html-css-js" scheme="http://example.com/categories/html-css-js/" />
+        <updated>2022-09-29T09:46:55.542Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2022/09/29/Penetration-test/fileupload/</id>
+        <title>fileupload</title>
+        <link rel="alternate" href="http://example.com/2022/09/29/Penetration-test/fileupload/"/>
+        <content type="html">&lt;h3 id=&#34;先欠着&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先欠着&#34;&gt;#&lt;/a&gt; 先欠着&lt;/h3&gt;
+</content>
+        <category term="Penetration-test" scheme="http://example.com/categories/Penetration-test/" />
+        <updated>2022-09-29T09:38:03.682Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2022/09/29/Penetration-test/csrf/</id>
+        <title>csrf</title>
+        <link rel="alternate" href="http://example.com/2022/09/29/Penetration-test/csrf/"/>
+        <content type="html">&lt;h3 id=&#34;先欠着&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先欠着&#34;&gt;#&lt;/a&gt; 先欠着&lt;/h3&gt;
+</content>
+        <category term="Penetration-test" scheme="http://example.com/categories/Penetration-test/" />
+        <updated>2022-09-29T09:36:48.031Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2022/09/29/Penetration-test/injection/</id>
+        <title>injection</title>
+        <link rel="alternate" href="http://example.com/2022/09/29/Penetration-test/injection/"/>
+        <content type="html">&lt;h3 id=&#34;先欠着&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先欠着&#34;&gt;#&lt;/a&gt; 先欠着&lt;/h3&gt;
+</content>
+        <category term="Penetration-test" scheme="http://example.com/categories/Penetration-test/" />
+        <updated>2022-09-29T09:36:06.067Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2022/09/29/Security/NTFS%E5%AE%89%E5%85%A8/</id>
+        <title>NTFS安全</title>
+        <link rel="alternate" href="http://example.com/2022/09/29/Security/NTFS%E5%AE%89%E5%85%A8/"/>
+        <content type="html">&lt;h3 id=&#34;ntfs权限概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ntfs权限概述&#34;&gt;#&lt;/a&gt; NTFS 权限概述&lt;/h3&gt;
+&lt;p&gt;通过设置 NTFS 权限，实现不同的用户访问不同对象的权限&lt;/p&gt;
+&lt;p&gt;分配正确的访问权限，用户才能访问其资源&lt;/p&gt;
+&lt;p&gt;设置权限防止资源被篡改&lt;/p&gt;
+&lt;p&gt;(磁盘格式化方式)&lt;/p&gt;
+&lt;h3 id=&#34;文件系统概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件系统概述&#34;&gt;#&lt;/a&gt; 文件系统概述&lt;/h3&gt;
+&lt;p&gt;文件系统即在外部存储设备上组织文件的方法&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;FAT //windows&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;NTFS  //windows&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;EXT //linux&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;ntfs权限设置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ntfs权限设置&#34;&gt;#&lt;/a&gt; NTFS 权限设置&lt;/h3&gt;
+&lt;p&gt;文件夹权限设置，在高级选项里取消父类继承，即可更改用户继承下来的权限。&lt;/p&gt;
+&lt;p&gt;用户在不同的组，权限累加&lt;/p&gt;
+&lt;p&gt;文件夹右键属性，安全，第二个替代子对象权限打勾。&lt;/p&gt;
+&lt;h3 id=&#34;文件共享服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件共享服务器&#34;&gt;#&lt;/a&gt; 文件共享服务器&lt;/h3&gt;
+&lt;p&gt;l 两个 ip 可通信，共享的文件夹打开共享并赋予相应用户的 NTFS 权限&lt;/p&gt;
+&lt;p&gt;在远程共享的电脑 cmd&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;x.x.x.x  //ip为文件共享服务器的ip&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询当前用户的账户名和 SID&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;whoami&lt;/span&gt; /user&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net share //查看当前共享的文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net share xx /del //xx为文件共享名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;net share &lt;span class=&#34;token assign-left variable&#34;&gt;xx&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;xx1 //xx为共享名，xx1为共享资源&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;445端口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#445端口&#34;&gt;#&lt;/a&gt; 445 端口&lt;/h3&gt;
+&lt;p&gt;打开 cmd 输入&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;services.msc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;找到 Server 服务，关闭该服务后，所有的共享全部失效，445 端口关闭，可以屏蔽病毒传入&lt;/p&gt;
+</content>
+        <category term="Security" scheme="http://example.com/categories/Security/" />
+        <updated>2022-09-29T01:49:31.131Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2022/09/26/Security/%E6%89%B9%E5%A4%84%E7%90%86/</id>
         <title>批处理</title>
