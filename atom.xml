@@ -11,10 +11,12 @@
     <updated>2022-09-30T08:38:20.958Z</updated>
     <category term="网络空间安全，WEB渗透测试，前端网页设计，She" />
     <entry>
-        <id>http://example.com/2022/09/30/Security/DHCP/</id>
-        <title>DHCP安全</title>
-        <link rel="alternate" href="http://example.com/2022/09/30/Security/DHCP/"/>
-        <content type="html">&lt;h3 id=&#34;dhcp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dhcp&#34;&gt;#&lt;/a&gt; DHCP&lt;/h3&gt;
+        <id>http://example.com/2022/09/30/Security/%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+        <title>DHCP、DNS、WEB、FTP安全</title>
+        <link rel="alternate" href="http://example.com/2022/09/30/Security/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+        <content type="html">&lt;p&gt;均在磁盘处安装 WINDOWS 组件&lt;/p&gt;
+&lt;h2 id=&#34;dhcp服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dhcp服务器&#34;&gt;#&lt;/a&gt; DHCP 服务器&lt;/h2&gt;
+&lt;p&gt;DHCP 端口号 67,68&lt;/p&gt;
 &lt;p&gt;作用：（Dynamic Host Configuration Protocol）自动分配 IP 地址&lt;/p&gt;
 &lt;p&gt;相関概念：&lt;/p&gt;
 &lt;p&gt;地址池 / 作用域：（IP，子网掩码，网关，DNS，租期）&lt;/p&gt;
@@ -34,13 +36,33 @@
 &lt;p&gt;租期过百分之 50 后，客户机重新发送 DHCP Request 包，进行续约，如服务器无响应，则继续使用并在 87.5% 再次发送，若仍然无响应，释放 IP 地址，重新发送 DHCP Discovery 广播包来获取 IP 地址，当无任何服务器响应时，自动给自己分配一个 169.254.x.x/16&lt;/p&gt;
 &lt;h3 id=&#34;部署dhcp服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#部署dhcp服务器&#34;&gt;#&lt;/a&gt; 部署 DHCP 服务器&lt;/h3&gt;
 &lt;p&gt;服务器与客户在同一网段，客户机 IP 为自动获取，手动配置服务器 IP，安装 Windows DHCP 服务组件，配置地址池，作用域。&lt;/p&gt;
-&lt;p&gt;DHCP 端口号 67,68&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig /release 取消当前IP租约&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig /renew   &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;命令时有IP则手动续约&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;发request&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;，无IP获取IP（发Discovery）&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在保留中，可以设置固定的 MAC 地址给固定的 ip。&lt;/p&gt;
 &lt;h3 id=&#34;dhcp攻击与防御&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dhcp攻击与防御&#34;&gt;#&lt;/a&gt; DHCP 攻击与防御&lt;/h3&gt;
 &lt;p&gt;1）攻击 DHCP 服务器：伪造 mac 地址，频繁发送 DHCP 请求，将地址池资源耗尽&lt;/p&gt;
 &lt;p&gt;​      防御：在交换机（管理型）处做 mac 地址动态绑定。&lt;/p&gt;
 &lt;p&gt;2）伪装 DHCP 服务器攻击：hack 通过将自己部署为 DHCP 服务器，为客户机提供非法 ip&lt;/p&gt;
 &lt;p&gt;​       防御：再交换机（管理型）上，除合法的 DHCP 服务器所在接口外，全部设置为禁止发送 dhcp offer 包&lt;/p&gt;
+&lt;h2 id=&#34;dns服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dns服务器&#34;&gt;#&lt;/a&gt; DNS 服务器&lt;/h2&gt;
+&lt;p&gt;端口号 TCP/UDP53&lt;/p&gt;
+&lt;p&gt;DNS 服务器（Domain Name Server，域名服务器）是进行域名和与之相对应的 IP 地址进行转换的服务器。&lt;/p&gt;
+&lt;p&gt;自己创建的 DNS 服务器要使客户机 DNS 指向它，才能获取正确的 DNS 解析&lt;/p&gt;
+&lt;p&gt;在自己的正向表单中添加解析记录即可&lt;/p&gt;
+&lt;h2 id=&#34;web服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#web服务器&#34;&gt;#&lt;/a&gt; WEB 服务器&lt;/h2&gt;
+&lt;p&gt;HTTP 协议端口号：TCP80&lt;/p&gt;
+&lt;p&gt;HTTPS 协议端口号：TCP443&lt;/p&gt;
+&lt;p&gt;也称 HTTP 服务器，在服务器磁盘中下载组件 IIS&lt;/p&gt;
+&lt;p&gt;在自己定的目录下设置文件夹（网站），里面放网站内容即可&lt;/p&gt;
+&lt;h3 id=&#34;同web服务器设置多站点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#同web服务器设置多站点&#34;&gt;#&lt;/a&gt; 同 WEB 服务器设置多站点&lt;/h3&gt;
+&lt;p&gt;设置同 IP 不同端口、（访问时在 IP 末尾添加:xxxx 端口号）设置同端口不同 IP，这两种方法仅限于做实验，在现实中不方便&lt;/p&gt;
+&lt;p&gt;IP 端口一样，不同网站绑定不同的域名。&lt;/p&gt;
+&lt;h2 id=&#34;ftp服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ftp服务器&#34;&gt;#&lt;/a&gt; FTP 服务器&lt;/h2&gt;
+&lt;p&gt;file transfor protocol 文件传输协议&lt;/p&gt;
+&lt;p&gt;端口号 TCP 20/21&lt;/p&gt;
+&lt;h3 id=&#34;工作方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#工作方式&#34;&gt;#&lt;/a&gt; 工作方式&lt;/h3&gt;
+&lt;p&gt;1）主动模式&lt;/p&gt;
+&lt;p&gt;2）被动模式&lt;/p&gt;
+&lt;h3 id=&#34;ftp权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ftp权限&#34;&gt;#&lt;/a&gt; FTP 权限&lt;/h3&gt;
+&lt;p&gt;在 FTP 的远程文件夹，用户的权限为 FTP 权限和 NTFS 权限的交集，所以在设置 FTP 权限时，给最大，这样交集就是 NTFS 权限&lt;/p&gt;
 </content>
         <category term="Security" scheme="http://example.com/categories/Security/" />
         <updated>2022-09-30T08:38:20.958Z</updated>
@@ -207,10 +229,11 @@
         <updated>2022-09-17T11:18:39.002Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2022/09/17/Security/ip/</id>
+        <id>http://example.com/2022/09/17/Security/ipDNS/</id>
         <title>ip</title>
-        <link rel="alternate" href="http://example.com/2022/09/17/Security/ip/"/>
-        <content type="html">&lt;p&gt;ip 地址是一段唯一标识，网络编码（二进制），32 位组成&lt;/p&gt;
+        <link rel="alternate" href="http://example.com/2022/09/17/Security/ipDNS/"/>
+        <content type="html">&lt;h3 id=&#34;ip&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ip&#34;&gt;#&lt;/a&gt; IP&lt;/h3&gt;
+&lt;p&gt;ip 地址是一段唯一标识，网络编码（二进制），32 位组成&lt;/p&gt;
 &lt;h3 id=&#34;32位二进制形式的ip地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32位二进制形式的ip地址&#34;&gt;#&lt;/a&gt; 32 位二进制形式的 IP 地址&lt;/h3&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;11010010.01001001&lt;/span&gt;.10001100.00000110&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在组建局域网等情况下，“连我 ip101010101101...”，&lt;s&gt;已经死亡&lt;/s&gt;，为了便于记忆和操作，将八位 2 进制转化为十进制，成为点分十进制&lt;/p&gt;
 &lt;h3 id=&#34;点分十进制ip地址&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#点分十进制ip地址&#34;&gt;#&lt;/a&gt; 点分十进制 IP 地址&lt;/h3&gt;
@@ -236,12 +259,15 @@
 &lt;p&gt;现在只作为一种习惯&lt;/p&gt;
 &lt;h3 id=&#34;网关&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网关&#34;&gt;#&lt;/a&gt; 网关&lt;/h3&gt;
 &lt;p&gt;一般企业 或者工作组，局域网的网段的第一个或者最后一个，作为整个内网的出口，叫做网关&lt;/p&gt;
-&lt;h3 id=&#34;dnsdomain-name-service域名服务&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dnsdomain-name-service域名服务&#34;&gt;#&lt;/a&gt; DNS（Domain Name Service）域名服务&lt;/h3&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE0LjIxNS4xNzcueG4tLTM5d3d3LXNuOWguYmFpZHUuY29t&#34;&gt;14.215.177.39 和 www.baidu.com&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;ip 难记，域名好记，DNS 就把域名解析成 ip, 然后才能访问，不多说&lt;/p&gt;
 &lt;h3 id=&#34;常用ip命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用ip命令&#34;&gt;#&lt;/a&gt; 常用 ip 命令&lt;/h3&gt;
 &lt;p&gt;建议自己试试，开两台虚拟机，&lt;s&gt;尝试 ping 死自己&lt;/s&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nslookup&lt;/span&gt; www.xxx.com //手工解析域名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig //查本机ip，子网掩码，网关// &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig /all //比上边多个DNS&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; //ping 几个包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; //一直ping&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; 数字 &lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; //ping数字个包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nslookup&lt;/span&gt; www.xxx.com //手工解析域名&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig //查本机ip，子网掩码，网关// &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ipconfig /all //比上边多个DNS&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-n&lt;/span&gt; //ping 几个包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-t&lt;/span&gt; //一直ping&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ping&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; 数字 &lt;span class=&#34;token function&#34;&gt;ip&lt;/span&gt; //ping数字个包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;dnsdomain-name-service域名服务&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dnsdomain-name-service域名服务&#34;&gt;#&lt;/a&gt; DNS（Domain Name Service）域名服务&lt;/h3&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE0LjIxNS4xNzcueG4tLTM5d3d3LXNuOWguYmFpZHUuY29t&#34;&gt;14.215.177.39 和 www.baidu.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;ip 难记，域名好记，DNS 就把域名解析成 ip, 然后才能访问，不多说.&lt;/p&gt;
+&lt;h3 id=&#34;域名组成&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#域名组成&#34;&gt;#&lt;/a&gt; 域名组成&lt;/h3&gt;
+&lt;p&gt;如 www.popcat.top，www 为主机名，baidu.com 为域名&lt;/p&gt;
+&lt;p&gt;主机名。域名称为完全限定域名（FQDN）, 域名全球唯一&lt;/p&gt;
+</content>
         <category term="Security" scheme="http://example.com/categories/Security/" />
         <updated>2022-09-17T11:17:25.377Z</updated>
     </entry>
