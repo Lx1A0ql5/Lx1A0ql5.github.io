@@ -10,9 +10,22 @@
         </author>
         <description>保持清醒</description>
         <language>zh-CN</language>
-        <pubDate>Wed, 12 Oct 2022 10:35:44 +0800</pubDate>
-        <lastBuildDate>Wed, 12 Oct 2022 10:35:44 +0800</lastBuildDate>
+        <pubDate>Thu, 06 Jul 2023 10:08:37 +0800</pubDate>
+        <lastBuildDate>Thu, 06 Jul 2023 10:08:37 +0800</lastBuildDate>
         <category term="网络空间安全，WEB渗透测试，前端网页设计，She" />
+        <item>
+            <guid isPermalink="true">http://example.com/2023/07/06/Security/%E7%BB%BF%E7%9B%9F/</guid>
+            <title>绿盟实习技术栈</title>
+            <link>http://example.com/2023/07/06/Security/%E7%BB%BF%E7%9B%9F/</link>
+            <category term="Security" scheme="http://example.com/categories/Security/" />
+            <pubDate>Thu, 06 Jul 2023 10:08:37 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;s&gt;西安电子科技大学&lt;/s&gt;&lt;/p&gt;
+&lt;h3 id=&#34;陕西绿盟科技实习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#陕西绿盟科技实习&#34;&gt;#&lt;/a&gt; 陕西绿盟科技实习&lt;/h3&gt;
+&lt;p&gt;开发指纹（根据网上的 POC 去找通用的网站写指纹识别）&lt;/p&gt;
+&lt;p&gt;此文主要目的是记录一下，由于签了保密协议，因此源码不能公布，主要就是利用了 fofa 这个网站的检索能力。依据此来给文件写指纹。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;v2-a0c48f92e893d6496e0ce641f3654025_720w.jpg&#34; alt=&#34;hexo博客如何插入图片&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2022/10/12/Penetration-test/445/</guid>
             <title>445漏洞IPC$</title>
